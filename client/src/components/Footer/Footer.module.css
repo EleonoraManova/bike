@@ -1,0 +1,42 @@
+.socialContainer {
+    padding: 5px 5px;
+}
+
+.social {
+    margin: 0 1rem;
+    transition: transform 250ms;
+    display: inline-block;
+}
+
+.social:hover {
+    transform: translateY(-3px);
+}
+
+.youtube {
+    color: #eb3223;
+}
+
+.facebook {
+    color: #4968ad;
+}
+
+.twitter {
+    color: #49a1eb;
+}
+
+.instagram {
+    color: black;
+}
+
+.words{
+font-size: small;
+text-decoration:solid;
+}
+
+.siteFooter {
+    background: lightgreen;
+    text-align: center;
+    margin:100px 1px ;
+
+    margin-bottom: auto;
+}

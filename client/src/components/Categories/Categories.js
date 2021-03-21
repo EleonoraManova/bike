@@ -36,7 +36,7 @@ class Categories extends Component {
                         </ul>
                     </nav>
 
-                    <style jsx>{`
+                    <style>{`
                         .active{
                             background-color: lightgreen;
                         }

@@ -1,0 +1,7 @@
+.categories ul li {
+
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
