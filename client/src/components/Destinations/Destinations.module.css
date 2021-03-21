@@ -1,4 +1,4 @@
-.categorieElement {
+.destination {
     background: darkseagreen;
     border-radius: 40%;
     text-align: center;
@@ -10,7 +10,7 @@
     display: inline-block;
 }
 
-.categorieElement img {
+.destination img {
     width: 100%;
     height: 100%;
     object-fit: cover;

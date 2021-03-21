@@ -6,6 +6,7 @@ import Categories from './components/Categories/Categories';
 
 
 
+
 function App() {
   return (
     <div className="container">
@@ -13,7 +14,8 @@ function App() {
 
       <Switch>
 
-        <Route path="/" exact component={ Categories}/>
+        <Route path="/" exact component={Categories} />
+
 
       </Switch>
 

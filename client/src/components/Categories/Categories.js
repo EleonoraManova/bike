@@ -1,7 +1,8 @@
 import { Component } from 'react';
-import mountain from "../Categories/mountain.jpg";
+
 import style from '../Categories/Categories.module.css';
 import { NavLink } from 'react-router-dom';
+import Destinations from '../Destinations/Destinations'
 
 
 class Categories extends Component {
@@ -43,16 +44,8 @@ class Categories extends Component {
                     </style>
                 </div>
 
+                <Destinations />
 
-                <section className={style.categorieElement}>
-                    <h3>Mounain biking</h3>
-
-                    <p className="img"><img src={mountain} alt="mountain biking" height={300} width={400} /></p>
-                    <p className="description">Extreme biking</p>
-                    <div className="pet-info">
-                        <NavLink to="/details"><button className="button">Details</button></NavLink>
-                    </div>
-                </section>
             </div>
 
         )
