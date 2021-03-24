@@ -2,7 +2,8 @@ import { Component } from 'react';
 
 import style from '../Categories/Categories.module.css';
 import { NavLink } from 'react-router-dom';
-import Destinations from '../Destinations/Destinations'
+import Destinations from '../Destinations/Destinations';
+import Jumbotron from '..//Jumbotron/Jumbotron'
 
 
 class Categories extends Component {
@@ -22,7 +23,7 @@ class Categories extends Component {
         return (
 
             <div>
-
+                <Jumbotron />
 
                 <div>
                     <nav className={style.categories}>

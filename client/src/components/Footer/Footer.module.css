@@ -1,5 +1,5 @@
 .socialContainer {
-    padding: 5px 5px;
+    padding: 0px 0px;
 }
 
 .social {
@@ -37,6 +37,10 @@ text-decoration:solid;
     background: lightgreen;
     text-align: center;
     margin:100px 1px ;
-
     margin-bottom: auto;
+}
+
+.terms{
+    font-size: small;
+    text-align:center;
 }

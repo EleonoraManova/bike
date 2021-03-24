@@ -1,17 +1,21 @@
 
-import style from '../Header/Header.module.css'
+import '../Header/Header.css'
 const Header = () => {
     return (
         <header >
-            <div className={style.navbar}>
-                <a className={style.button} href="/">Home</a>
-                <a className={style.button} href="/">Моите дестинации</a>
-                <a className={style.button} href="/">Магазин</a>
-                <a className={style.button} href="/">За нас</a>
+            <div className="navbar">
+
+                <a className="navbutton" href="/">Home</a>
+                <a className="navbutton" href="/mydestinations">My destinations</a>
+                <a className="navbutton" href="/shop">Shop</a>
+                <a className="navbutton" href="/about">About us</a>
+
+                <div className="auth">
+                    <a href="/login">Login</a>
+                    <a href="/register">Register</a>
+                </div>
             </div>
-            <section className={style.navigation}>
-                <h1>Welcome</h1>
-            </section>
+
         </header>
     )
 }

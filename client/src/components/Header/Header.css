@@ -1,0 +1,46 @@
+.button:hover {
+    background-color: bisque;
+    color: black;
+}
+
+.navbutton {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 4px;
+    background-color: tan;
+    float: left;
+}
+
+.auth a {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 4px;
+    background-color: tan;
+    float: right;
+}
+
+.auth a:hover {
+    background-color: bisque;
+    color: black;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+    /* Full width */
+}
