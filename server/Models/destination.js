@@ -11,4 +11,4 @@ const DestinationSchema = new Schema(
 
 )
 
-module.exports = mongoose.model('Destination', DestinationSchema)
+module.exports = mongoose.model('destination', DestinationSchema)
