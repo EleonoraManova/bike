@@ -10,7 +10,7 @@ const DestinationCard = ({
 
             <p className="img"><img src={mountain} alt="mountain biking" height={300} width={400} /></p>
             <p className="description">Extreme biking</p>
-            <div className="pet-info">
+            <div className="destination-info">
                 <NavLink to="/details"><button className="button">Details</button></NavLink>
             </div>
         </section>

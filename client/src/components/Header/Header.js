@@ -6,29 +6,42 @@ const Header = ({
     isAuthenticated,
     username,
 }) => {
-    return (
-        <header >
-            <div className="navbar">
 
-                <Link className="navbutton" to="/">Home</Link>
-                <Link className="navbutton" to="/mydestinations">My destinations</Link>
-                <Link className="navbutton" to="/shop">Shop</Link>
-                <Link className="navbutton" to="/about">About us</Link>
+    if (isAuthenticated) {
+        return (
+            <header >
+                <div className="navbar">
 
-                <div className="auth">
-                    {isAuthenticated
-                        ? <h3>Hello, {username}</h3>
-                        :  <Link to="/register">Register</Link>
-                    }
+                    <Link className="navbutton" to="/">Home</Link>
+                    <Link className="navbutton" to="/profile">Profile</Link>
+                    <Link className="navbutton" to="/mydestinations">My destinations</Link>
+                    <Link className="navbutton" to="/shop">Shop</Link>
+                    <Link className="navbutton" to="/about">About us</Link>
 
+                    <div className="auth">
+                        <h3>Hello, {username}</h3>
 
-                    <Link to="/login">Login</Link>
-
-                    <Link to="/logout">Logout</Link>
+                        <Link to="/logout">Logout</Link>
+                    </div>
                 </div>
-            </div>
 
-        </header>
-    )
+            </header>
+        )
+    } else {
+        return (
+            <header >
+                <div className="navbar">
+                    <Link className="navbutton" to="/">Home</Link>
+                    <div className="auth">
+                        <Link to="/register">Register</Link>
+                        <Link to="/login">Login</Link>
+                        <Link className="navbutton" to="/about">About us</Link>
+                    </div>
+                </div>
+            </header>
+        )
+    }
+
+
 }
 export default Header;
