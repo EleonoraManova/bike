@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Categories from './components/Categories/Categories';
@@ -7,14 +7,23 @@ import Register from './components/Forms/Register/Register';
 import Login from './components/Forms/Login/Login';
 import Racing from './components/Racing/Racing';
 import CreateTrip from './components/Forms/Create/CreateTrip';
+import { auth } from './utils/firebase'
+import { useEffect, useState } from 'react';
 
 
 
 
 function App() {
+
+  const [user, setUser] = useState(null)
+  useEffect(() => {
+    auth.onAuthStateChanged(setUser)
+  }, []);
+
   return (
     <div className="container">
-      <Header />
+      <Header username={user?.email} isAuthenticated={Boolean(user)} />
+      <h1>{user?.email}</h1>
 
       <Switch>
 
@@ -22,8 +31,12 @@ function App() {
         <Route path="/other" component={GoogleApiWrapper} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
-        <Route path="/racing" exact component={Racing}/>
-        <Route path="/racing/create" component={CreateTrip}/>
+        <Route path="/racing" exact component={Racing} />
+        <Route path="/racing/create" component={CreateTrip} />
+        <Route path="/logout" render={props => {
+          auth.signOut();
+          return <Redirect to={"/"} />
+        }} />
 
 
 

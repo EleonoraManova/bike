@@ -1,21 +1,37 @@
-const Register = () => {
-const onSubmitHandler = (e) => {
-    e.preventDefault();
-    console.log(e.target.username.value);
-}
+import { auth } from '../../../utils/firebase';
 
-    return(
+const Register = ({
+    history
+}) => {
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        const username = e.target.username.value;
+        const password = e.target.password.value;
+        const repassword = e.target.repassword.value;
+        if (password === repassword) {
+            auth.createUserWithEmailAndPassword(username, password)
+                .then(userCredential => {
+                    console.log(`register`);
+                    history.push('/')
+                })
+                .catch(err => console.log(err))
+        } else {
+            console.log('passwords dont match');
+        }
+    }
+
+    return (
         <div>
             <h1>Register</h1>
 
             <form onSubmit={onSubmitHandler}>
                 <label htmlFor="username">Username</label>
-                <input type="text" id="username" name="username"/>
+                <input type="text" id="username" name="username" />
                 <label htmlFor="password">Password</label>
-                <input type="password" id="password" name="password"/>
-                <label htmlFor="re-password">Repeat Password</label>
-                <input type="password" id="re-password" name="re-password"/>
-                <input type="submit" value="Register"/>
+                <input type="password" id="password" name="password" />
+                <label htmlFor="repassword">Repeat Password</label>
+                <input type="password" id="repassword" name="repassword" />
+                <input type="submit" value="Register" />
             </form>
         </div>
     )

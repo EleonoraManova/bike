@@ -1,18 +1,30 @@
 
-import '../Header/Header.css'
-const Header = () => {
+import '../Header/Header.css';
+import { Link } from 'react-router-dom'
+
+const Header = ({
+    isAuthenticated,
+    username,
+}) => {
     return (
         <header >
             <div className="navbar">
 
-                <a className="navbutton" href="/">Home</a>
-                <a className="navbutton" href="/mydestinations">My destinations</a>
-                <a className="navbutton" href="/shop">Shop</a>
-                <a className="navbutton" href="/about">About us</a>
+                <Link className="navbutton" to="/">Home</Link>
+                <Link className="navbutton" to="/mydestinations">My destinations</Link>
+                <Link className="navbutton" to="/shop">Shop</Link>
+                <Link className="navbutton" to="/about">About us</Link>
 
                 <div className="auth">
-                    <a href="/login">Login</a>
-                    <a href="/register">Register</a>
+                    {isAuthenticated
+                        ? <h3>Hello, {username}</h3>
+                        :  <Link to="/register">Register</Link>
+                    }
+
+
+                    <Link to="/login">Login</Link>
+
+                    <Link to="/logout">Logout</Link>
                 </div>
             </div>
 

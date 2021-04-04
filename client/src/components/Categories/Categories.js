@@ -2,8 +2,8 @@ import { Component } from 'react';
 
 import style from '../Categories/Categories.module.css';
 import { NavLink } from 'react-router-dom';
-import Destinations from '../Destinations/Destinations';
-import Jumbotron from '..//Jumbotron/Jumbotron'
+import Jumbotron from '..//Jumbotron/Jumbotron';
+import DestinationCard from '../destinationCard/DestinationCard'
 
 
 class Categories extends Component {
@@ -12,11 +12,19 @@ class Categories extends Component {
 
         this.state = {
 
-            bikes: []
+            destinations: []
 
 
         }
     }
+
+componentDidMount(){
+    fetch('http://localhost:3000/api/destinations')
+    .then(res => res.json())
+    .then(res => this.setState({desrinations: res}))
+    .catch(err => console.log(err))
+}
+
     render() {
 
 
@@ -45,7 +53,7 @@ class Categories extends Component {
                     </style>
                 </div>
 
-                <Destinations />
+                <DestinationCard />
 
             </div>
 
