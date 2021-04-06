@@ -7,21 +7,48 @@ import Register from './components/Forms/Register/Register';
 import Login from './components/Forms/Login/Login';
 import TypeBiking from './components/TypeBiking/TypeBiking';
 import CreateTrip from './components/Forms/Create/CreateTrip';
-import { auth } from './utils/firebase'
+import Destinations from './components/Destinations/Destinations';
+import firebase, { auth } from './utils/firebase'
 import { useEffect, useState } from 'react';
-
+// import firebase from './firebase'
 
 
 
 function App() {
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
+  const [destinations, setDestinations] = useState([]);
+  const [loading, setLoading] = useState(false)
+
+  const ref = firebase.firestore().collection("destinations");
+
+  function getDestinations(){
+    setLoading(true);
+    ref.onSnapshot((querySnapshot) => {
+      const items = [];
+
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      });
+      setDestinations(items);
+      setLoading(false);
+    })
+  }
+
   useEffect(() => {
     auth.onAuthStateChanged(setUser)
   }, []);
 
+  useEffect(() => {
+    getDestinations();
+  }, [])
+
   return (
+
     <div className="container">
+
+
+
       <Header username={user?.email} isAuthenticated={Boolean(user)} />
       <h1>{user?.email}</h1>
 
@@ -44,7 +71,15 @@ function App() {
 
       </Switch>
 
-
+      <h1>destinations</h1>
+  {/* <Destinations destinations={this.destination}></Destinations> */}
+      {destinations.map((destination) => (
+        <div key={destination.id}>
+          <h2>{destination.categorie}</h2>
+          <p>{destination.description}</p>
+          <image src={destination.img}/>
+        </div>
+      ))}
 
       <Footer />
     </div>

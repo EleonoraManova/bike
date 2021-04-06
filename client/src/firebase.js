@@ -1,5 +1,4 @@
 import firebase from 'firebase/app';
-import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
@@ -10,15 +9,9 @@ const firebaseConfig = {
     storageBucket: "bikes-6e08a.appspot.com",
     messagingSenderId: "564251661927",
     appId: "1:564251661927:web:58d23aa80308eeaacde6c2"
-};
+  };
 
-
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-};
-
-
+  
+firebase.initializeApp(firebaseConfig);
 
 export default firebase;
-
-export const auth = firebase.auth();

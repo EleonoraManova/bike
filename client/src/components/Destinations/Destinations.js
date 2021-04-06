@@ -18,16 +18,16 @@ class Destinations extends Component {
         }
     }
 
-    componentDidMount() {
-        fetch('http://localhost:3000/api/destinations')
-            .then((res) =>{
-                res.json()
-                console.log(res);
-            } )
-            .then(res => this.setState({ desrinations: res }))
-            .catch(err => console.log(err))
+    // componentDidMount() {
+    //     fetch('http://localhost:3000/api/destinations')
+    //         .then((res) =>{
+    //             res.json()
+    //             console.log(res);
+    //         } )
+    //         .then(res => this.setState({ desrinations: res }))
+    //         .catch(err => console.log(err))
   
-    }
+    // }
 
     render() {
         return (
