@@ -18,13 +18,6 @@ class Categories extends Component {
         }
     }
 
-componentDidMount(){
-    fetch('http://localhost:3000/api/destinations')
-    .then(res => res.json())
-    .then(res => this.setState({desrinations: res}))
-    .catch(err => console.log(err))
-}
-
     render() {
 
 

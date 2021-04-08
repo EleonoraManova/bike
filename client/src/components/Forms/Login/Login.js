@@ -1,4 +1,4 @@
-import firebase, {auth} from '../../../utils/firebase'
+import {auth} from '../../../utils/firebase'
 
 
 const Login = ({

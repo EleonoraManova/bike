@@ -1,8 +1,6 @@
-import mountain from "../Destinations/mountain.jpg";
+
 import { NavLink } from 'react-router-dom';
-import { Button, Colors } from 'react-foundation';
 import firebase from '../../utils/firebase';
-// import destinationData from '../Hooks/Hooks'
 import { useEffect, useState } from 'react';
 
 
@@ -29,12 +27,12 @@ const DestinationCard = ({
         getDestinations();
     }, []);
 
-
     return (
         <section className='section-wrapper destination'>
 
             <h1>destinations</h1>
             {destinations.map((destination) => (
+
                 <div key={destination.id}>
                     <h3>Category: {destination.category}</h3>
 

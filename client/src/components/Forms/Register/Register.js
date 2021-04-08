@@ -21,7 +21,7 @@ const Register = ({
     }
 
     return (
-        <div>
+        <div className="section-wrapper">
             <h1>Register</h1>
 
             <form onSubmit={onSubmitHandler}>
@@ -31,7 +31,7 @@ const Register = ({
                 <input type="password" id="password" name="password" />
                 <label htmlFor="repassword">Repeat Password</label>
                 <input type="password" id="repassword" name="repassword" />
-                <input type="submit" value="Register" />
+                <input className="button" type="submit" value="Register" />
             </form>
         </div>
     )

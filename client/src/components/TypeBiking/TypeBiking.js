@@ -1,12 +1,15 @@
 import './TypeBiking.css'
+import { Link } from 'react-router-dom';
+
+
 
 const TypeBiking = () => {
 
     return (
-        <div>
+        <div >
             <h1>TypeBiking</h1>
 
-            <a type="submit" className="far fa-plus-square" href="/racing/create">Add</a>
+            <Link to="/racing/create" type="submit" className="far fa-plus-square"  >Add</Link>
         </div>
     )
 
@@ -14,4 +17,3 @@ const TypeBiking = () => {
 
 export default TypeBiking;
 
-//TODO: /racing/create to change
