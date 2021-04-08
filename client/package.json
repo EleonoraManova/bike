@@ -15,6 +15,7 @@
     "foundation-sites": "^6.6.3",
     "google-maps-react": "^2.0.6",
     "json-server": "^0.16.3",
+    "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-foundation": "^0.9.7",

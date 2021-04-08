@@ -1,5 +1,6 @@
 import style from "../Footer/Footer.module.css";
 import SocialFollow from "./SocialFollow";
+import { Link } from 'react-router-dom';
 
 
 
@@ -9,7 +10,7 @@ const Footer = () => {
         <footer className={style.siteFooter}>
             <SocialFollow/>
             <p className={style.words}>&copy; 2021 All right reserved</p>
-            <a href="/" className={style.terms}>Terms of use</a>
+            <Link to="/" className={style.terms}>Terms of use</Link>
         </footer>
     )
 }

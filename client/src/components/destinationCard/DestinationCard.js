@@ -4,9 +4,8 @@ import firebase from '../../utils/firebase';
 import { useEffect, useState } from 'react';
 
 
-const DestinationCard = ({
-    category,
-}) => {
+
+const DestinationCard = () => {
 
     const ref = firebase.firestore().collection("destinations");
     const [destinations, setDestinations] = useState([]);
@@ -38,30 +37,15 @@ const DestinationCard = ({
 
                     <img src={destination.img} className="img" alt="mountain biking" height={300} width={400} />
                     <p className="description">{destination.description}</p>
+                    <time>{destination.destinationDate}</time>
                     <div className="destination-info">
-                        <NavLink to="/details"><button className="button ">Details</button></NavLink>
+                        <NavLink to={`/details/${destination.id}`}><button className="button ">Details</button></NavLink>
 
                     </div>
                 </div>
             ))}
         </section>
 
-
-
-
-
-
-        // <section className='section-wrapper destination'>
-        //     <h3>Category : {destinations}</h3>
-
-        //     <img src={mountain} className="img" alt="mountain biking" height={300} width={400} />
-        //     <p className="description">Extreme biking</p>
-        //     <div className="destination-info">
-        //         <NavLink to="/details"><button className="button ">Details</button></NavLink>
-        //         <button className="button success">Submit</button>
-
-        //     </div>
-        // </section>
     )
 }
 

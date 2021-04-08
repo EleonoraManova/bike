@@ -1,0 +1,1 @@
+import DestinationCard from '../destinationCard/DestinationCard'

@@ -42,8 +42,8 @@ function CreateTrip() {
                 <input type="url" id="image" name="image" onChange={(e)=> setImg(e.target.value)} />
                 <label htmlFor="description">Description</label>
                 <textarea name="description" onChange={(e)=> setDescription(e.target.value)} />
-                <label for="destinationDate">Trip (date and time):</label>
-                <input type="datetime-local" id="destinationDate" name="destinationDate" onChange={(e)=> setDestinationDate(e.target.value)}/>
+                <label htmlFor="destinationDate">Trip (date and time):</label>
+                <input type="datetime-local" id="destinationDate" name="destinationDate" onChange={(e)=> setDestinationDate(e.target.value).moment()}/>
                 <input type="submit" value="CreateTrip" onClick={()=> addDestination({category, img, description, destinationDate, id: uniqid()})} />
 
             </form>

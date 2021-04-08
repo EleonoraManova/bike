@@ -18,13 +18,21 @@ const Header = ({
                     <Link className="navbutton" to="/shop">Shop</Link>
                     <Link className="navbutton categories" to="/">Categories
                         <ul className="categories-dropdown">
-                            <li><NavLink to="/">All</NavLink></li>
+                            <li><NavLink to="/all">All</NavLink></li>
                             <li><NavLink to="/racing">Racing</NavLink></li>
                             <li><NavLink to="/mountain">Mountain</NavLink></li>
                             <li><NavLink to="/sightseeing">Sightseeing</NavLink></li>
                             <li><NavLink to="/city">City</NavLink></li>
                             <li><NavLink to="/other">Other</NavLink></li>
+
                         </ul>
+                        <style>{`
+                        .active{
+                            background-color: lightgreen;
+                        }
+                        `}
+                        </style>
+
                     </Link>
                     <Link className="navbutton" to="/about">About us</Link>
                     <div className="auth">
