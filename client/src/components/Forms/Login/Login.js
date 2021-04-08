@@ -20,7 +20,7 @@ const Login = ({
     }
 
     return (
-        <div>
+        <div className="section-wrapper">
             <h1>Login</h1>
 
             <form onSubmit={onSubmitHandler}>
@@ -28,7 +28,7 @@ const Login = ({
                 <input type="text" id="username" name="username" />
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" name="password" />
-                <input type="submit" value="Login" />
+                <input className="button" type="submit" value="Login" />
             </form>
         </div>
     )

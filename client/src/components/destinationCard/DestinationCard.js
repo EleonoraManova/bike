@@ -1,19 +1,69 @@
 import mountain from "../Destinations/mountain.jpg";
 import { NavLink } from 'react-router-dom';
+import { Button, Colors } from 'react-foundation';
+import firebase from '../../utils/firebase';
+// import destinationData from '../Hooks/Hooks'
+import { useEffect, useState } from 'react';
+
 
 const DestinationCard = ({
     category,
 }) => {
-    return (
-        <section className='destination'>
-            <h3>Category : {category}</h3>
 
-            <p className="img"><img src={mountain} alt="mountain biking" height={300} width={400} /></p>
-            <p className="description">Extreme biking</p>
-            <div className="destination-info">
-                <NavLink to="/details"><button className="button">Details</button></NavLink>
-            </div>
+    const ref = firebase.firestore().collection("destinations");
+    const [destinations, setDestinations] = useState([]);
+    function getDestinations() {
+
+        ref.onSnapshot((querySnapshot) => {
+            const items = [];
+
+            querySnapshot.forEach((doc) => {
+                items.push(doc.data());
+            });
+            setDestinations(items);
+
+        })
+    }
+
+    useEffect(() => {
+        getDestinations();
+    }, []);
+
+
+    return (
+        <section className='section-wrapper destination'>
+
+            <h1>destinations</h1>
+            {destinations.map((destination) => (
+                <div key={destination.id}>
+                    <h3>Category: {destination.category}</h3>
+
+                    <img src={destination.img} className="img" alt="mountain biking" height={300} width={400} />
+                    <p className="description">{destination.description}</p>
+                    <div className="destination-info">
+                        <NavLink to="/details"><button className="button ">Details</button></NavLink>
+
+                    </div>
+                </div>
+            ))}
         </section>
+
+
+
+
+
+
+        // <section className='section-wrapper destination'>
+        //     <h3>Category : {destinations}</h3>
+
+        //     <img src={mountain} className="img" alt="mountain biking" height={300} width={400} />
+        //     <p className="description">Extreme biking</p>
+        //     <div className="destination-info">
+        //         <NavLink to="/details"><button className="button ">Details</button></NavLink>
+        //         <button className="button success">Submit</button>
+
+        //     </div>
+        // </section>
     )
 }
 

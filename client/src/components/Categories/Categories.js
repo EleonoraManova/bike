@@ -33,16 +33,16 @@ componentDidMount(){
             <div>
                 <Jumbotron />
 
-                <div>
+                <div className="section-wrapper">
                     <nav className={style.categories}>
-                        <ul>
+                        {/* <ul>
                             <li><NavLink to="/">All</NavLink></li>
                             <li><NavLink to="/racing">Racing</NavLink></li>
                             <li><NavLink to="/mountain">Mountain</NavLink></li>
                             <li><NavLink to="/sightseeing">Sightseeing</NavLink></li>
                             <li><NavLink to="/city">City</NavLink></li>
                             <li><NavLink to="/other">Other</NavLink></li>
-                        </ul>
+                        </ul> */}
                     </nav>
 
                     <style>{`

@@ -6,6 +6,45 @@ body {
   background-color: ivory;
 }
 
+header {
+  padding-top: 67px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+
+.navbar {
+  overflow: visible !important;
+}
+
+.categories {
+  position: relative;
+}
+
+.categories-dropdown {
+  display: none;
+  width: 100%;
+  top: 40px;
+  list-style: none;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  background-color: inherit;
+  margin: 0;
+  padding: 10px 5px;
+  border-radius: 0 0 4px 4px;
+}
+.categories:hover .categories-dropdown {
+  display: block;
+}
+
+.section-wrapper, .categories {
+  padding: 0 5%;
 }

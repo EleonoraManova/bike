@@ -46,14 +46,10 @@ function App() {
   return (
 
     <div className="container">
-
-
-
       <Header username={user?.email} isAuthenticated={Boolean(user)} />
-      <h1>{user?.email}</h1>
+      {/* <h1>{user?.email}</h1> */}
 
       <Switch>
-
         <Route path="/" exact component={Categories} />
         <Route path="/other" component={GoogleApiWrapper} />
         <Route path="/register" component={Register} />
@@ -66,21 +62,9 @@ function App() {
           auth.signOut();
           return <Redirect to={"/"} />
         }} />
-
-
-
       </Switch>
 
-      <h1>destinations</h1>
-  {/* <Destinations destinations={this.destination}></Destinations> */}
-      {destinations.map((destination) => (
-        <div key={destination.id}>
-          <h2>{destination.categorie}</h2>
-          <p>{destination.description}</p>
-          <image src={destination.img}/>
-        </div>
-      ))}
-
+ 
       <Footer />
     </div>
 

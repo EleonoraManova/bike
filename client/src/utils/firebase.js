@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import 'firebase/messaging';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBX5Ilc2zlMBeiGT5i3to-Oci9hbwfCkyU",
@@ -22,3 +23,4 @@ if (!firebase.apps.length) {
 export default firebase;
 
 export const auth = firebase.auth();
+export const messaging = firebase.messaging();

@@ -1,7 +1,15 @@
+import firebase, {messaging} from '../../../utils/firebase'
+
 const CreateTrip = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        console.log(e.target.category.value);
+        let categoryValue = document.getElementById('category').value;
+        console.log(categoryValue);
+        console.log(e.target.description.value);
+
+
+
+
     }
 
     return (
