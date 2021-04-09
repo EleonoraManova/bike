@@ -10,6 +10,15 @@ header {
   padding-top: 67px;
 }
 
+h3.greeting {
+  padding: 20px 15px;
+  display: inline-block;
+  float: right;
+  color: ivory;
+  font-size: 24px;
+  line-height: 32px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

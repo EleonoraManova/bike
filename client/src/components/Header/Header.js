@@ -36,9 +36,9 @@ const Header = ({
                     </Link>
                     <Link className="navbutton" to="/about">About us</Link>
                     <div className="auth">
-                        <h3>Hello, {username}</h3>
                         <Link to="/logout">Logout</Link>
                     </div>
+                    <h3 className="greeting">Hello, {username}</h3>
                 </div>
             </header>
         )

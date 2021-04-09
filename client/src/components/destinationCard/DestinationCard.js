@@ -41,7 +41,6 @@ const DestinationCard = () => {
                 <time>{destination.destinationDate}</time>
                 <div className="destination-info">
                     <NavLink to={`/details/${destination.id}`}><button className="button ">Details</button></NavLink>
-
                 </div>
             </div>
             ))}

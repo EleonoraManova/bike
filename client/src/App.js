@@ -17,9 +17,7 @@ import Shop from './components/Shop/Shop'
 
 function App() {
 
-  // componentMount(() => {
-  //   console.log('mounted');
-  // })
+
 
   const [user, setUser] = useState(null);
 
