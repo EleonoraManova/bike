@@ -3,6 +3,7 @@ import Jumbotron from '../Jumbotron/Jumbotron';
 import DestinationCard from '../destinationCard/DestinationCard';
 
 
+
 const HomePage = ({
     isAuthenticated,
 

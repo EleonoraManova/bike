@@ -11,10 +11,15 @@ import Details from "./components/Details/Details"
 import  { auth } from './utils/firebase'
 import { useEffect, useState } from 'react';
 import DestinationCard from './components/destinationCard/DestinationCard';
+import Shop from './components/Shop/Shop'
 
 
 
 function App() {
+
+  // componentMount(() => {
+  //   console.log('mounted');
+  // })
 
   const [user, setUser] = useState(null);
 
@@ -40,6 +45,7 @@ function App() {
         <Route path="/mountain" exact component={TypeBiking} />
         <Route path="/mountain/create" component={CreateTrip} />
         <Route path="/details/" component={Details} />
+        <Route path="/shop" component={Shop} />
         <Route path="/logout" render={() => {
           auth.signOut();
           return <Redirect to={"/"} />
