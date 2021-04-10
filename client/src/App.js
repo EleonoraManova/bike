@@ -15,7 +15,8 @@ import Shop from './components/Shop/Shop';
 import AuthContext from './contexts/AuthContext';
 import CreateItem from './components/Forms/Create/CreateItem';
 import EditDestinationForm from './components/Forms/EditDestinationForm/EditDestinationForm';
-import CreateProfile from './components/Forms/Create/CreateProfile'
+import CreateProfile from './components/Forms/Create/CreateProfile';
+import About from './components/About/About'
 
 
 
@@ -60,6 +61,7 @@ function App() {
           <Route path="/details/:destinationId" exact component={Details} />
           <Route path="/shop" component={Shop} />
           <Route path="/details/:destinationId/edit" component={EditDestinationForm}/>
+          <Route path="/about" component={About} />
           <Route path="/profile" component={CreateProfile} />
          
 
