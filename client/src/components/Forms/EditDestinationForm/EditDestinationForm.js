@@ -1,6 +1,7 @@
 
-import { useEffect, useState, setState } from 'react';
+import { useEffect, useState } from 'react';
 import firebase from '../../../utils/firebase';
+
 
 const EditDestinationForm = ({
     history,
@@ -12,7 +13,7 @@ const EditDestinationForm = ({
     let path = window.location.pathname.split('/')
     let id = path[2]
 
-
+  
 
     function getDestinations() {
         ref.onSnapshot((querySnapshot) => {
@@ -48,6 +49,8 @@ const EditDestinationForm = ({
             })
     }
 
+
+    
 
     return (
         <div>

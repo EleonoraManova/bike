@@ -2,18 +2,26 @@ import firebase from '../../utils/firebase';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-// const database = firebase.database();
 
 
-const Details = ({
-    history,
-}) => {
+const Details = () => {
+
 
     let path = window.location.pathname.split('/')
     let id = path[2]
 
     const ref = firebase.firestore().collection("destinations");
     const [destinations, setDestinations] = useState([]);
+
+    const user = firebase.auth().currentUser;
+
+    let uid;
+
+
+
+    if (user != null) {
+        uid = user.uid;
+    }
 
 
     function getDestinations() {
@@ -42,23 +50,18 @@ const Details = ({
             })
     }
 
-    function editTrip(updatedTrip) {
-        ref
-            .doc(updatedTrip.id)
-            .update(updatedTrip)
-            .catch((err) => {
-                console.error(err)
-            })
-    }
+    let current = destinations.filter((destination) => destination.id === id)
+    let isCreator = current.map((destination) => destination.destinationCreator === uid);
 
 
+if(isCreator[0]){
     return (
         <section className='section-wrapper destination'>
 
             <h1>destinations</h1>
             {destinations.filter((destination) => destination.id === id).map((destination) => (
                 <div key={destination.id}>
-                    <h3>Category: {destination.category}</h3>
+                    <h3>{destination.category}</h3>
 
                     <img src={destination.img} className="img" alt="mountain biking" height={300} width={400} />
                     <p className="description">{destination.description}</p>
@@ -66,6 +69,8 @@ const Details = ({
                     <div className="destination-buttons">
                         <button className="button " onClick={() => deleteTrip(destination)}>Delete</button>
                         <NavLink to={`/details/${destination.id}/edit`}><button className="button ">Edit</button></NavLink>
+
+
                     </div>
 
                 </div>
@@ -73,6 +78,26 @@ const Details = ({
         </section>
 
     )
+} else {
+    return (
+        <section className='section-wrapper destination'>
+
+            <h1>destinations</h1>
+            {destinations.filter((destination) => destination.id === id).map((destination) => (
+                <div key={destination.id}>
+                    <h3>{destination.category}</h3>
+
+                    <img src={destination.img} className="img" alt="mountain biking" height={300} width={400} />
+                    <p className="description">{destination.description}</p>
+                    <time>{destination.destinationDate}</time>
+
+                </div>
+            ))}
+        </section>
+
+    )
+}
+
 
 }
 

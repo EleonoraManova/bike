@@ -1,11 +1,27 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import firebase from '../../../utils/firebase';
-const uniqid = require('uniqid');
 
+
+const uniqid = require('uniqid');
 
 function CreateTrip({
     history,
+
 }) {
+
+
+    const user = firebase.auth().currentUser;
+    let uid;
+
+
+    
+    if (user != null) {
+
+      uid = user.uid;
+    }
+
+  
+    // const { isAuthenticated, username, uid } = useContext(AuthContext);
 
     const [destinations, setDestinations] = useState([]);
     const [category, setCategory] = useState("");
@@ -17,7 +33,7 @@ function CreateTrip({
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        let categoryValue = document.getElementById('category').value;
+
 
     }
 
@@ -49,7 +65,7 @@ function CreateTrip({
                 <textarea name="description" onChange={(e)=> setDescription(e.target.value)} />
                 <label htmlFor="destinationDate">Trip (date and time):</label>
                 <input type="datetime-local" id="destinationDate" name="destinationDate" onChange={(e)=> setDestinationDate(e.target.value)}/>
-                <input type="submit" value="CreateTrip" onClick={()=> addDestination({category, img, description, destinationDate, id: uniqid()})} />
+                <input type="submit" value="CreateTrip" onClick={()=> addDestination({category, img, description, destinationDate, id: uniqid(), destinationCreator:uid})} />
 
             </form>
         </div>

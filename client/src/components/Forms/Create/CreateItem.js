@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import firebase from '../../../utils/firebase';
 const uniqid = require('uniqid');
 
@@ -18,7 +18,6 @@ function CreateItem({
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        let titleValue = document.getElementById('title').value;
 
     }
 

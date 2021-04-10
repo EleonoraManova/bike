@@ -3,6 +3,8 @@ import { auth } from '../../../utils/firebase';
 const Register = ({
     history
 }) => {
+
+
     const onSubmitHandler = (e) => {
         e.preventDefault();
         const username = e.target.username.value;
@@ -11,7 +13,6 @@ const Register = ({
         if (password === repassword) {
             auth.createUserWithEmailAndPassword(username, password)
                 .then(userCredential => {
-                    console.log(`register`);
                     history.push('/')
                 })
                 .catch(err => console.log(err))

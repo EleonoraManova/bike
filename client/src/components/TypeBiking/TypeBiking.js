@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 
 
+
 const TypeBiking = () => {
 
 
@@ -41,7 +42,7 @@ const TypeBiking = () => {
             <h1>destinations</h1>
             {destinations.filter((destination) => destination.category === category).map((destination) => (
                 <div key={destination.id}>
-                    <h3>Category: {destination.category}</h3>
+                    <h3> {destination.category}</h3>
 
                     <img src={destination.img} className="img" alt="mountain biking" height={300} width={400} />
                     <p className="description">{destination.description}</p>

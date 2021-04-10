@@ -13,9 +13,9 @@ import { useEffect, useState } from 'react';
 import DestinationCard from './components/destinationCard/DestinationCard';
 import Shop from './components/Shop/Shop';
 import AuthContext from './contexts/AuthContext';
-import isAuth from './hoc/isAuth';
 import CreateItem from './components/Forms/Create/CreateItem';
-import EditDestinationForm from './components/Forms/EditDestinationForm/EditDestinationForm'
+import EditDestinationForm from './components/Forms/EditDestinationForm/EditDestinationForm';
+import CreateProfile from './components/Forms/Create/CreateProfile'
 
 
 
@@ -60,6 +60,7 @@ function App() {
           <Route path="/details/:destinationId" exact component={Details} />
           <Route path="/shop" component={Shop} />
           <Route path="/details/:destinationId/edit" component={EditDestinationForm}/>
+          <Route path="/profile" component={CreateProfile} />
          
 
           <Route path="/logout" render={() => {
