@@ -26,27 +26,39 @@ const Shop = () => {
         getItems();
     }, []);
 
-    
+
     return (
 
-        <section className='section-wrapper item'>
-
+        <div className='grid-container'>
             <h1>Items</h1>
-            {items.map((item) => (
+            <div class="grid-x grid-margin-x small-up-2 medium-up-3">
 
-                <div key={item.id}>
-                    <h3>{item.title}</h3>
 
-                    <img src={item.img} className="img" alt="shop item" height={300} width={400} />
-                    <p className="description">{item.description}</p>
-                    <p>{item.price}</p>
-                    <p>{item.telephone}</p>
-                    <button className="button ">Buy</button>
-                    
-                </div>
-            ))}
-                        <Link to="/create/item" type="submit" className="far fa-plus-square"  >Add</Link>
-        </section>
+
+                {items.map((item) => (
+                    <div className='section-wrapper item'>
+                        <div className='cell'>
+                            <div className='card'>
+
+                                <div key={item.id} className="card-section">
+                                    <h3>{item.title}</h3>
+
+                                    <img src={item.img} className="img" alt="shop item" height={300} width={400} />
+                                    <p className="description">{item.description}</p>
+                                    <p>{item.price}</p>
+                                    <p>{item.telephone}</p>
+                                    <button className="button ">Buy</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+                <Link to="/create/item" type="submit" className="button large expanded"  >Add</Link>
+
+            </div>
+
+        </div>
     )
 };
 

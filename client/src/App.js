@@ -17,6 +17,7 @@ import CreateItem from './components/Forms/Create/CreateItem';
 import EditDestinationForm from './components/Forms/EditDestinationForm/EditDestinationForm';
 import CreateProfile from './components/Forms/Create/CreateProfile';
 import About from './components/About/About'
+import NotFound from './components/NotFound/NotFound';
 
 
 
@@ -60,10 +61,12 @@ function App() {
           <Route path="/create" component={CreateItem} />
           <Route path="/details/:destinationId" exact component={Details} />
           <Route path="/shop" component={Shop} />
-          <Route path="/details/:destinationId/edit" component={EditDestinationForm}/>
+          <Route path="/details/:destinationId/edit" component={EditDestinationForm} />
           <Route path="/about" component={About} />
           <Route path="/profile" component={CreateProfile} />
-         
+          <Route component={NotFound}/>
+
+
 
           <Route path="/logout" render={() => {
             auth.signOut();
@@ -72,7 +75,7 @@ function App() {
         </Switch>
 
 
-        <Footer />
+      <Footer />
 
       </AuthContext.Provider>
     </div>

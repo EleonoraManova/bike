@@ -10,7 +10,7 @@ const Footer = () => {
         <footer className={style.siteFooter}>
             <SocialFollow/>
             <p className={style.words}>&copy; 2021 All right reserved</p>
-            <Link to="/" className={style.terms}>Terms of use</Link>
+            <Link to={{ pathname:"https://www.broadridge.com/intl/legal/terms-of-use"}} target="/blank" className={style.terms}>Terms of use</Link>
         </footer>
     )
 }

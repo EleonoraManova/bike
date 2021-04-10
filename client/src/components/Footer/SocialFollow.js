@@ -13,18 +13,18 @@ export default function SocialFollow() {
     return (
         <div className={style.socialContainer}>
             <h3 className={style.words}>Follow us on:</h3>
-            <Link to="https://www.youtube.com/user/fabwibmer"
+            <Link to={{ pathname:"https://www.youtube.com/user/fabwibmer"}}  target="/blank"
                 className={style.youtube}>
                 <FontAwesomeIcon icon={faYoutube} size="2x" className={style.social} />
             </Link>
-            <Link to="https://www.facebook.com/"
+            <Link to={{ pathname:"https://www.facebook.com/"}} target="/blank"
                 className={style.facebook}>
                 <FontAwesomeIcon icon={faFacebook} size="2x" className={style.social}/>
             </Link>
-            <Link to="https://www.twitter.com/" className={style.twitter}>
+            <Link to={{ pathname:"https://www.twitter.com/"}} target="/blank" className={style.twitter}>
                 <FontAwesomeIcon icon={faTwitter} size="2x" className={style.social}/>
             </Link>
-            <Link to="https://www.instagram.com/"
+            <Link to={{ pathname:"https://www.instagram.com/"}} target="/blank"
                 className={style.instagram}>
                 <FontAwesomeIcon icon={faInstagram} size="2x" className={style.social}/>
             </Link>
