@@ -50,7 +50,7 @@ const TypeBiking = () => {
 
                 </div>
             ))}
-            <Link to="/racing/create" type="submit" className="far fa-plus-square"  >Add</Link>
+            <Link to="/create" type="submit" className="far fa-plus-square"  >Add</Link>
         </section>
     )
 

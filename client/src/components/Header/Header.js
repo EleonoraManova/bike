@@ -14,7 +14,6 @@ const Header = ({
                 <div className="navbar">
                     <Link className="navbutton" to="/">Home</Link>
                     <Link className="navbutton" to="/profile">Profile</Link>
-                    <Link className="navbutton" to="/mydestinations">My destinations</Link>
                     <Link className="navbutton" to="/shop">Shop</Link>
                     <Link className="navbutton categories" to="/">Categories
                         <ul className="categories-dropdown">

@@ -13,7 +13,10 @@ import { useEffect, useState } from 'react';
 import DestinationCard from './components/destinationCard/DestinationCard';
 import Shop from './components/Shop/Shop';
 import AuthContext from './contexts/AuthContext';
-import isAuth from './hoc/isAuth'
+import isAuth from './hoc/isAuth';
+import CreateItem from './components/Forms/Create/CreateItem';
+import EditDestinationForm from './components/Forms/EditDestinationForm/EditDestinationForm'
+
 
 
 
@@ -49,11 +52,15 @@ function App() {
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/racing" exact component={TypeBiking} />
-          <Route path="/racing/create" component={CreateTrip} />
           <Route path="/mountain" exact component={TypeBiking} />
-          <Route path="/mountain/create" component={CreateTrip} />
-          <Route path="/details/" component={Details} />
+          <Route path="/sightseeing" exact component={TypeBiking} />
+          <Route path="/city" exact component={TypeBiking} />
+          <Route path="/create" exact component={CreateTrip} />
+          <Route path="/create" component={CreateItem} />
+          <Route path="/details/:destinationId" exact component={Details} />
           <Route path="/shop" component={Shop} />
+          <Route path="/details/:destinationId/edit" component={EditDestinationForm}/>
+         
 
           <Route path="/logout" render={() => {
             auth.signOut();

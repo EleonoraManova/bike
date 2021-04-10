@@ -3,7 +3,9 @@ import firebase from '../../../utils/firebase';
 const uniqid = require('uniqid');
 
 
-function CreateTrip() {
+function CreateTrip({
+    history,
+}) {
 
     const [destinations, setDestinations] = useState([]);
     const [category, setCategory] = useState("");
@@ -25,6 +27,9 @@ function CreateTrip() {
             .set(newDestination)
             .then(() => {
                 setDestinations((prev) => [newDestination, ...prev])
+            })
+            .then(()=> {
+                history.push(`/${newDestination.category}`)
             })
             .catch((err) => {
                 console.log(err);

@@ -1,6 +1,7 @@
 
 import firebase from '../../utils/firebase';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Shop = () => {
@@ -32,7 +33,7 @@ const Shop = () => {
             {items.map((item) => (
 
                 <div key={item.id}>
-                    <h3>Item: {item.title}</h3>
+                    <h3>{item.title}</h3>
 
                     <img src={item.img} className="img" alt="shop item" height={300} width={400} />
                     <p className="description">{item.description}</p>
@@ -42,6 +43,7 @@ const Shop = () => {
                     
                 </div>
             ))}
+                        <Link to="/create/item" type="submit" className="far fa-plus-square"  >Add</Link>
         </section>
     )
 };
