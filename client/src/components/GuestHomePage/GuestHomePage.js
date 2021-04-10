@@ -1,8 +1,9 @@
-import '../Jumbotron/Jumbotron.css'
+
+import'./GuestHomePage.css'
 
 const GuestHomePage = () => {
     return (
-        <section className="guestHome section-wrapper">
+        <section className="text-center guestHome">
             <h1>Join our Community</h1>
         </section>
     )
