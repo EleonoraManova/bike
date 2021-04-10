@@ -3,7 +3,7 @@ import '../Jumbotron/Jumbotron.css'
 const Jumbotron = () => {
     return (
         <section className="jumbotron">
-            <h1>Enjoy the jorney</h1>
+            <h1>Enjoy the journey</h1>
         </section>
     )
 

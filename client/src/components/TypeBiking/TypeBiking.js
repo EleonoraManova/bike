@@ -1,5 +1,5 @@
 import './TypeBiking.css'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import firebase from '../../utils/firebase';
 import { useEffect, useState } from 'react';
 
@@ -32,7 +32,7 @@ const TypeBiking = () => {
         getDestinations();
     }, []);
 
-    
+
     return (
 
 
@@ -48,7 +48,9 @@ const TypeBiking = () => {
                     <p className="description">{destination.description}</p>
                     <time>{destination.destinationDate}</time>
 
-
+                    <div className="destination-info">
+                        <NavLink to={`/details/${destination.id}`}><button className="button ">Details</button></NavLink>
+                    </div>
                 </div>
             ))}
             <Link to="/create" type="submit" className="far fa-plus-square"  >Add</Link>

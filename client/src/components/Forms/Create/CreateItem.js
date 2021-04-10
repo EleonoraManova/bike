@@ -37,7 +37,7 @@ function CreateItem({
     }
 
     return (
-        <div>
+        <div className="section-wrapper">
             <h1>CreateItem</h1>
 
             <form onSubmit={onSubmitHandler}>

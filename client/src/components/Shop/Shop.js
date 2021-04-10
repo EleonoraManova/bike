@@ -25,6 +25,8 @@ const Shop = () => {
     useEffect(() => {
         getItems();
     }, []);
+
+    
     return (
 
         <section className='section-wrapper item'>

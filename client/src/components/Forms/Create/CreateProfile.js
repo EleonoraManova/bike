@@ -78,10 +78,12 @@ function CreateProfile({
                 {current.map((profile) => (
 
                     <div key={profile.id}>
-                        <h3>{profile.name}</h3>
+                        <h3>Name: {profile.name}</h3>
 
                         <img src={profile.img} className="img" alt="my picture" height={300} width={400} />
-                        <p className="description">{profile.about}</p>
+                        <p className="description">About me: {profile.about}</p>
+                        <p>Birth Date:{profile.birthDate}</p>
+                        <p>My phone number:{profile.telephone}</p>
 
                     </div>
                 ))}
@@ -91,7 +93,7 @@ function CreateProfile({
 
     } else {
         return (
-            <div>
+            <div className="section-wrapper">
                 <h1>Create Your Profile</h1>
 
                 <form onSubmit={onSubmitHandler}>

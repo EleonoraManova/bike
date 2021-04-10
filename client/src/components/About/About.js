@@ -4,8 +4,7 @@ import './About.css'
 const About = () => {
     return (
 
-        <section style={{ 
-            backgroundImage: `url('trek.jpg')` }}>
+        <section className="section-wrapper">
 
             <div className="w3-col m6 w3-padding-large">
                 <h1 className="w3-center">About us</h1>

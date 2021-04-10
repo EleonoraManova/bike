@@ -58,7 +58,16 @@ const EditDestinationForm = ({
             {destinations.filter((destination) => destination.id === id).map((destination) => (
             <form onSubmit={onSubmitHandler}>
                 <label htmlFor="category">Category</label>
-                <input type="text" id="category" name="category" defaultValue={destination.category} onChange={(e) => {destination.category = e.target.value}} />
+
+                <select id="dropdown"  onChange={(e) => {destination.category = e.target.value}}>
+                    <option value="racing">racing</option>
+                    <option value="mountain">mountain</option>
+                    <option value="sightseeing">sightseeing</option>
+                    <option value="city">city</option>
+                    <option value="other">other</option>
+                </select>
+
+                {/* <input type="text" id="category" name="category" defaultValue={destination.category} onChange={(e) => {destination.category = e.target.value}} /> */}
                 <label htmlFor="image">Image</label>
                 <input type="url" id="image" name="image" defaultValue={destination.img} onChange={(e) => {destination.img = e.target.value}}/>
                 <label htmlFor="description">Description</label>

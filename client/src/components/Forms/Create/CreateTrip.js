@@ -14,13 +14,13 @@ function CreateTrip({
     let uid;
 
 
-    
+
     if (user != null) {
 
-      uid = user.uid;
+        uid = user.uid;
     }
 
-  
+
     // const { isAuthenticated, username, uid } = useContext(AuthContext);
 
     const [destinations, setDestinations] = useState([]);
@@ -44,7 +44,7 @@ function CreateTrip({
             .then(() => {
                 setDestinations((prev) => [newDestination, ...prev])
             })
-            .then(()=> {
+            .then(() => {
                 history.push(`/${newDestination.category}`)
             })
             .catch((err) => {
@@ -53,19 +53,29 @@ function CreateTrip({
     }
 
     return (
-        <div>
+        <div className="section-wrapper">
             <h1>CreateTrip</h1>
 
             <form onSubmit={onSubmitHandler}>
                 <label htmlFor="category">Category</label>
-                <input type="text" id="category" name="category" onChange={(e)=> setCategory(e.target.value)}/>
+
+
+                <select id="dropdown" onChange={(e) => setCategory(e.target.value)}>
+                    <option value="racing">racing</option>
+                    <option value="mountain">mountain</option>
+                    <option value="sightseeing">sightseeing</option>
+                    <option value="city">city</option>
+                    <option value="other">other</option>
+                </select>
+
+                {/* <input type="text" id="category" name="category" onChange={(e) => setCategory(e.target.value)} /> */}
                 <label htmlFor="image">Image</label>
-                <input type="url" id="image" name="image" onChange={(e)=> setImg(e.target.value)} />
+                <input type="url" id="image" name="image" onChange={(e) => setImg(e.target.value)} />
                 <label htmlFor="description">Description</label>
-                <textarea name="description" onChange={(e)=> setDescription(e.target.value)} />
+                <textarea name="description" onChange={(e) => setDescription(e.target.value)} />
                 <label htmlFor="destinationDate">Trip (date and time):</label>
-                <input type="datetime-local" id="destinationDate" name="destinationDate" onChange={(e)=> setDestinationDate(e.target.value)}/>
-                <input type="submit" value="CreateTrip" onClick={()=> addDestination({category, img, description, destinationDate, id: uniqid(), destinationCreator:uid})} />
+                <input type="datetime-local" id="destinationDate" name="destinationDate" onChange={(e) => setDestinationDate(e.target.value)} />
+                <input type="submit" value="CreateTrip" onClick={() => addDestination({ category, img, description, destinationDate, id: uniqid(), destinationCreator: uid })} />
 
             </form>
         </div>
