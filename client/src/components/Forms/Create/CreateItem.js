@@ -51,7 +51,7 @@ function CreateItem({
                 <input type="text" id="price" name="price" onChange={(e)=> setItemPrice(e.target.value)}/>
                 <label htmlFor="telephone">Telephone</label>
                 <input type="text" id="telephone" name="telephone" onChange={(e)=> setTelephone(e.target.value)}/>
-                <input type="submit" value="Sell Item" onClick={()=> addITem({title, img, description, price, telephone, id: uniqid()})} />
+                <input type="submit" value="Sell Item" className="button " onClick={()=> addITem({title, img, description, price, telephone, id: uniqid()})} />
 
             </form>
         </div>

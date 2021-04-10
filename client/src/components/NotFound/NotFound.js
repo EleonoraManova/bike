@@ -1,19 +1,13 @@
-import React from "react";
-import './NotFound.css'
-function NotFound() {
-    return (
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-        <div className="section-wrapper" style={{
-            background: 'center',
-            height: '500px',
-            backgroundImage: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover'
-
-        }}>
-
-        </div>
-    );
-}
+const NotFound = () => (
+  <div>
+    <h1>404 - Not Found!</h1>
+    <Link to="/">
+      Go Home
+    </Link>
+  </div>
+);
 
 export default NotFound;

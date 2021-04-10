@@ -75,7 +75,7 @@ function CreateTrip({
                 <textarea name="description" onChange={(e) => setDescription(e.target.value)} />
                 <label htmlFor="destinationDate">Trip (date and time):</label>
                 <input type="datetime-local" id="destinationDate" name="destinationDate" onChange={(e) => setDestinationDate(e.target.value)} />
-                <input type="submit" value="CreateTrip" onClick={() => addDestination({ category, img, description, destinationDate, id: uniqid(), destinationCreator: uid })} />
+                <input type="submit" value="CreateTrip" className="button " onClick={() => addDestination({ category, img, description, destinationDate, id: uniqid(), destinationCreator: uid })} />
 
             </form>
         </div>

@@ -1,4 +1,4 @@
-div {
+.not-found-wrapper {
     background: url('http://localhost:8000/404.jpg');
 
 }

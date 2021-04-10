@@ -50,21 +50,22 @@ function App() {
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/all" component={DestinationCard} />
-          <Route path="/other" component={GoogleApiWrapper} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/racing" exact component={TypeBiking} />
           <Route path="/mountain" exact component={TypeBiking} />
           <Route path="/sightseeing" exact component={TypeBiking} />
           <Route path="/city" exact component={TypeBiking} />
+          <Route path="/other" exact component={TypeBiking} />
           <Route path="/create" exact component={CreateTrip} />
           <Route path="/create" component={CreateItem} />
+
           <Route path="/details/:destinationId" exact component={Details} />
           <Route path="/shop" component={Shop} />
           <Route path="/details/:destinationId/edit" component={EditDestinationForm} />
           <Route path="/about" component={About} />
           <Route path="/profile" component={CreateProfile} />
-          <Route component={NotFound}/>
+          {/* <Route component={NotFound}/> */}
 
 
 
