@@ -8,10 +8,13 @@ import Login from './components/Forms/Login/Login';
 import TypeBiking from './components/TypeBiking/TypeBiking';
 import CreateTrip from './components/Forms/Create/CreateTrip';
 import Details from "./components/Details/Details"
-import  { auth } from './utils/firebase'
+import { auth } from './utils/firebase'
 import { useEffect, useState } from 'react';
 import DestinationCard from './components/destinationCard/DestinationCard';
-import Shop from './components/Shop/Shop'
+import Shop from './components/Shop/Shop';
+import AuthContext from './contexts/AuthContext';
+import isAuth from './hoc/isAuth'
+
 
 
 
@@ -25,33 +28,43 @@ function App() {
     auth.onAuthStateChanged(setUser)
   }, []);
 
+  const authInfo = {
+    isAuthenticated: Boolean(user),
+    username: user?.email,
+  };
+
 
   return (
 
     <div className="container">
-      <Header username={user?.email} isAuthenticated={Boolean(user)} />
-      {/* <h1>{user?.email}</h1> */}
+      <AuthContext.Provider value={authInfo}>
 
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/all" component={DestinationCard} />
-        <Route path="/other" component={GoogleApiWrapper} />
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
-        <Route path="/racing" exact component={TypeBiking} />
-        <Route path="/racing/create" component={CreateTrip} />
-        <Route path="/mountain" exact component={TypeBiking} />
-        <Route path="/mountain/create" component={CreateTrip} />
-        <Route path="/details/" component={Details} />
-        <Route path="/shop" component={Shop} />
-        <Route path="/logout" render={() => {
-          auth.signOut();
-          return <Redirect to={"/"} />
-        }} />
-      </Switch>
+        <Header username={user?.email} isAuthenticated={Boolean(user)} />
+        {/* <h1>{user?.email}</h1> */}
 
- 
-      <Footer />
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/all" component={DestinationCard} />
+          <Route path="/other" component={GoogleApiWrapper} />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
+          <Route path="/racing" exact component={TypeBiking} />
+          <Route path="/racing/create" component={CreateTrip} />
+          <Route path="/mountain" exact component={TypeBiking} />
+          <Route path="/mountain/create" component={CreateTrip} />
+          <Route path="/details/" component={Details} />
+          <Route path="/shop" component={Shop} />
+
+          <Route path="/logout" render={() => {
+            auth.signOut();
+            return <Redirect to={"/"} />
+          }} />
+        </Switch>
+
+
+        <Footer />
+
+      </AuthContext.Provider>
     </div>
 
   );

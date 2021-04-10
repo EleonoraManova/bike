@@ -1,5 +1,7 @@
 import firebase from '../../utils/firebase';
 import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 // const database = firebase.database();
 
 
@@ -10,7 +12,7 @@ const Details = () => {
 
     const ref = firebase.firestore().collection("destinations");
     const [destinations, setDestinations] = useState([]);
-    let destination;
+
 
     function getDestinations() {    
         ref.onSnapshot((querySnapshot) => {
@@ -28,7 +30,6 @@ const Details = () => {
         getDestinations();
     }, []);
     
-    let current = destinations.filter((destination) => destination.id === id)[0];
 
     return (
         <section className='section-wrapper destination'>
@@ -41,6 +42,11 @@ const Details = () => {
                 <img src={destination.img} className="img" alt="mountain biking" height={300} width={400} />
                 <p className="description">{destination.description}</p>
                 <time>{destination.destinationDate}</time>
+                <div className="destination-buttons">
+                    <NavLink to={`/details/${destination.id}/delete`}><button className="button ">Delete</button></NavLink>
+                    <NavLink to={`/details/${destination.id}/edit`}><button className="button ">Edit</button></NavLink>
+                </div>
+
             </div>
             ))}
         </section>

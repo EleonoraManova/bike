@@ -39,6 +39,7 @@ const Shop = () => {
                     <p>{item.price}</p>
                     <p>{item.telephone}</p>
                     <button className="button ">Buy</button>
+                    
                 </div>
             ))}
         </section>

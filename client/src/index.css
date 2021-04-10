@@ -46,7 +46,7 @@ p {
   position: absolute;
   text-align: left;
   background-color: inherit;
-  margin: 0;
+  margin: 0px;
   padding: 10px 5px;
   border-radius: 0 0 4px 4px;
 }

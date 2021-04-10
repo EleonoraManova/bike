@@ -1,25 +1,36 @@
 import './HomePage.css';
 import Jumbotron from '../Jumbotron/Jumbotron';
 import DestinationCard from '../destinationCard/DestinationCard';
+import { auth } from '../../utils/firebase';
+import { useEffect, useContext } from 'react';
+import AuthContext from '../../contexts/AuthContext';
+import GuestHomePage from '../GuestHomePage/GuestHomePage'
 
 
 
-const HomePage = ({
-    isAuthenticated,
+const HomePage = () => {
+    const { isAuthenticated, username } = useContext(AuthContext);
 
-}) => {
- 
-        return (
+    useEffect(() => {
+        if (!isAuthenticated) {
+            return;
+        }
+    })
 
-            <div className="main">
+    return (
 
-                <Jumbotron />
+        <div className="main">
+
+            <Jumbotron />
+
+            {isAuthenticated
+                ? <DestinationCard />
+                : <GuestHomePage />
+            }
 
 
-                <DestinationCard />
-
-            </div>
-        )
+        </div>
+    )
 
 }
 
