@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 cd client
 
+I dropped mongoDB! Now I use firebase as a database :)
+
 ## Available Scripts
 
 In the project directory, you can run:
